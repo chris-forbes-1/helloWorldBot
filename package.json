@@ -4,7 +4,7 @@
   "description": "fuckabout bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
     "discord"
@@ -15,5 +15,5 @@
     "body-parser": "^1.18.1",
     "discord.js": "11.2.1",
     "express": "^4.15.4"
-  }
+  },
 }
