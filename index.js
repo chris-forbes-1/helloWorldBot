@@ -146,6 +146,9 @@ const bodyParser     = require('body-parser');
         };
 
         const isMortalCommand = (msg) => {
+            let commands_list = ['.avatar <user> - gets the users avatar',
+            '.userInfo - displays some basic user informartion'];
+
             if(msg.mentions.everyone) {
                 msg.channel.send('',{file:'http://i0.kym-cdn.com/photos/images/newsfeed/001/291/784/c32.jpg'});
             }
@@ -162,7 +165,17 @@ const bodyParser     = require('body-parser');
                     {
                         doNameBasedCall(msg, userInfo);
                     }
+                    else if(message_received.startsWith(".help_commands"))
+                    {
+                        let message = '';
+                        commands_list.forEach((command) => {
+                            message += command +"\n"
+                        });
+                        let description = `Available commands are: \n ${message}`;
+                        msg.reply(description);
+                    }
                 }
+                
                 
             }
         };
